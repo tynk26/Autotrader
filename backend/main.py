@@ -15,12 +15,7 @@ IB_CLIENT_ID = int(os.getenv("IB_CLIENT_ID", "17"))
 CORS_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "*").split(",")]
 
 app = FastAPI(title="IBKR Trading Backend", version="1.0.0")
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"] if CORS_ORIGINS == ["*"] else CORS_ORIGINS,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Update for production
@@ -83,7 +78,6 @@ class ContractReq(BaseModel):
 
 class OrderReq(BaseModel):
     contract: ContractReq
-    # action: str = Field(..., regex="^(BUY|SELL|buy|sell)$")
     action: str = Field(..., pattern="^(BUY|SELL|buy|sell)$")
 
     quantity: int = Field(..., gt=0)
