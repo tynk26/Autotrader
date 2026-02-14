@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/lodash": "^4.17.20",
+    "lodash": "^4.17.21",
+    "react-feather": "^2.0.10"
+  }
+}
