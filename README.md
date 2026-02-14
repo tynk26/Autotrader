@@ -1,8 +1,8 @@
 # PROJECT OVERVIEW
 
-<img width="1263" height="647" alt="Screenshot 2025-09-22 063931" src="https://github.com/user-attachments/assets/5581ff41-9cd3-4e2a-ad1c-2cbdbd7c6559" />
+<img width="1263" height="725" alt="Screenshot 2025-09-22 063931" src="https://github.com/user-attachments/assets/5581ff41-9cd3-4e2a-ad1c-2cbdbd7c6559" />
 <img width="1268" height="725" alt="image" src="https://github.com/user-attachments/assets/42aab198-5e4c-4d24-b88c-f8cb8e7e6337" />
-<img width="509" height="277" alt="image" src="https://github.com/user-attachments/assets/fb8b025e-75a1-48f4-9e3f-b8ea6562f5a0" />
+<img width="1268" height="725" alt="image" src="https://github.com/user-attachments/assets/fb8b025e-75a1-48f4-9e3f-b8ea6562f5a0" />
 
 # 🚀 ALGO_V3
 
