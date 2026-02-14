@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 from ib_insync import IB, Stock, Forex, Future, Option, Contract, MarketOrder, LimitOrder, StopOrder, StopLimitOrder, util
 from dotenv import load_dotenv
 import math 
-
+from ibkr_client import IBKRClient
 load_dotenv()
 
 IB_HOST = os.getenv("IB_HOST", "127.0.0.1")
