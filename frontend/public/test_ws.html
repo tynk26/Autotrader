@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>WebSocket Test</h2>
+
+    <script>
+      console.log("스크립트 실행됨");
+
+      const ws = new WebSocket("ws://localhost:8000/ws/test");
+
+      ws.onopen = () => {
+        console.log("WS 연결됨");
+      };
+
+      ws.onmessage = (e) => {
+        console.log("수신:", e.data);
+      };
+
+      ws.onerror = (e) => {
+        console.log("에러:", e);
+      };
+
+      ws.onclose = () => {
+        console.log("종료됨");
+      };
+    </script>
+  </body>
+</html>
