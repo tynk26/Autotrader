@@ -110,7 +110,32 @@ def build_order(req: OrderReq):
         return StopLimitOrder(action, req.quantity, req.lmtPrice, req.auxPrice)
     raise HTTPException(400, f"Unsupported orderType: {typ}")
 
+# ---------------------------
+# TEST WEBSOCKET ENDPOINT
+# ---------------------------
+@app.websocket("/ws/test")
+async def websocket_test(ws: WebSocket):
+    await ws.accept()
+    print("[main.py] WebSocket 연결 성공")
 
+    try:
+        while True:
+            now = datetime.utcnow().isoformat()
+
+            payload = {
+                "type": "heartbeat",
+                "server_time": now,
+                "message": "WebSocket 정상 동작 중"
+            }
+
+            await ws.send_text(json.dumps(payload))
+
+            print(f"[main.py] WS 전송: {payload}")
+
+            await asyncio.sleep(1)
+
+    except WebSocketDisconnect:
+        print("[main.py] WebSocket 연결 종료")
 @app.on_event("startup")
 async def startup_event():
     try:
