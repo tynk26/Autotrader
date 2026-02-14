@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    container_name: algo_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - IB_HOST=host.docker.internal
+      - IB_PORT=4002
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: algo_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
