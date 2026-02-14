@@ -7,6 +7,7 @@ from ib_insync import IB, Stock, Forex, Future, Option, Contract, MarketOrder, L
 from dotenv import load_dotenv
 import math 
 from ibkr_client import IBKRClient
+from ws import test_router, tick_router, indicator_router
 load_dotenv()
 
 IB_HOST = os.getenv("IB_HOST", "127.0.0.1")
@@ -23,7 +24,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+app.include_router(test_router)
+app.include_router(tick_router)
+app.include_router(indicator_router)
+@app.get("/")
+async def root():
+    return {"status": "ALGO_V4 backend running"}
 ib = IB()
 _connected = False
 _conn_lock = asyncio.Lock()
