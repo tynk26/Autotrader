@@ -153,24 +153,41 @@ ALGO_V3/
 ├── backend/
 │   ├── main.py
 │   ├── strategy_engine.py
-│   ├── contract_utils.py
+│   ├── ibkr_client.py
 │   ├── datafeed.py
 │   ├── models.py
 │   └── requirements.txt
+│   ├── ws/
+│   │   │   ├── indicator_ws.py
+│   │   │   ├── manager.py
+│   │   │   ├── test_ws.py
+│   │   │   ├── tick_ws.py
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── TVChart.tsx
+│   │   │   ├── AlertManager.tsx
+│   │   │   ├── AlgoActivityFeed.tsx
 │   │   │   ├── Dashboard.tsx
+│   │   │   ├── DebugConsole.tsx
+│   │   │   └── DepthL2.tsx
+│   │   │   ├── LeftToolbar.tsx
+│   │   │   ├── OrderPanel.tsx
 │   │   │   ├── OrderTicket.tsx
+│   │   │   ├── PerformancePanel.tsx
+│   │   │   └── RightWatchList.tsx
 │   │   │   ├── StrategySignalsPanel.tsx
+│   │   │   ├── TVChart.tsx
+│   │   │   ├── Topbar.tsx
+│   │   │   ├── TopNav.tsx
 │   │   │   └── TradeLog.tsx
 │   │   │
 │   │   ├── lib/
 │   │   │   └── timeframes.ts
 │   │   │
 │   │   └── App.tsx
+│   │   └── index.tsx
+│   │   └── main.tsx
 │   │
 │   └── package.json
 │
