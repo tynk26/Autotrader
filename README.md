@@ -227,10 +227,12 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
 Frontend
 cd frontend
 npm install
 npm run dev
+
 2️⃣ Docker 기반 실행 (권장)
 1️⃣ Docker Build & Up
 docker compose up --build
