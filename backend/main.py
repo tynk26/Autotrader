@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 import math 
 from ibkr_client import IBKRClient
 from ws import test_router, tick_router, indicator_router
+from app.db.database import engine, Base
+from app.db import models
 load_dotenv()
 
 IB_HOST = os.getenv("IB_HOST", "127.0.0.1")
@@ -27,6 +29,15 @@ app.add_middleware(
 app.include_router(test_router)
 app.include_router(tick_router)
 app.include_router(indicator_router)
+
+@app.on_event("startup")
+async def startup():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
+    print("[DB] PostgreSQL connected successfully")
+    print("[DB] Tables initialized")
+
 @app.get("/")
 async def root():
     return {"status": "ALGO_V4 backend running"}

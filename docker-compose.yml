@@ -10,6 +10,16 @@ services:
     volumes:
       - ./backend:/app
     restart: unless-stopped
+  db:
+    image: postgres:15
+    container_name: algo_db_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: algo_db
+    ports:
+      - "5432:5432"
 
   frontend:
     build: ./frontend

@@ -4,3 +4,6 @@ uvicorn[standard]==0.30.6
 ib-insync==0.9.86
 python-dotenv==1.0.1
 websockets==12.0
+sqlalchemy
+asyncpg
+psycopg2-binary
